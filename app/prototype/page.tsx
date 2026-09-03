@@ -15,6 +15,8 @@ import {
 import type { CSSProperties } from "react";
 import { useEffect, useMemo, useState } from "react";
 
+const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const steps = [
   {
     id: "intake",
@@ -345,7 +347,7 @@ export default function PrototypePage() {
               );
             })}
           </nav>
-          <a className="prototype-case-study-action" href="/" target="_blank" rel="noreferrer">
+          <a className="prototype-case-study-action" href={`${siteBasePath}/`} target="_blank" rel="noreferrer">
             Go to case study <ArrowRight size={16} />
           </a>
         </aside>

@@ -15,6 +15,8 @@ import {
 import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 
+const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const platformLayers = [
   ["Connect agents from anywhere", "Bring agents from AWS, Azure, GCP, LangChain, on-prem, or custom stacks into one governed layer."],
   ["Run on any LLM", "Keep model choice flexible across GPT, Claude, Gemini, Llama, Mistral, or private models."],
@@ -549,7 +551,7 @@ export default function Home() {
           </div>
         </div>
         <a className="portfolio-float" href="https://darshdave.com" target="_blank" rel="noreferrer">
-          <img src="/darsh-portrait.png" alt="AI generated portrait of Darsh Dave" />
+          <img src={`${siteBasePath}/darsh-portrait.png`} alt="AI generated portrait of Darsh Dave" />
           <div>
             <span>Explore Portfolio</span>
             <strong>darshdave.com</strong>
@@ -825,7 +827,7 @@ export default function Home() {
         <div className="section-heading">
           <p>10 / MVP</p>
           <h2>MVP</h2>
-          <a className="mvp-title-action" href="/prototype" target="_blank" rel="noreferrer">
+          <a className="mvp-title-action" href={`${siteBasePath}/prototype`} target="_blank" rel="noreferrer">
             Explore Prototype <ArrowRight size={18} />
           </a>
         </div>
@@ -841,7 +843,7 @@ export default function Home() {
               void event.currentTarget.play();
             }}
           >
-            <source src="/lyzr-mvp-tour.mp4" type="video/mp4" />
+            <source src={`${siteBasePath}/lyzr-mvp-tour.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="mvp-workflow-subheading">
@@ -1007,7 +1009,7 @@ function SiteHeader() {
   return (
     <header className="site-header sticky top-0 z-20 border-b backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
-        <a href="/" className="brand-lockup" aria-label="Lyzr case study">
+        <a href={`${siteBasePath}/`} className="brand-lockup" aria-label="Lyzr case study">
           <strong>Lyzr AI Case Study</strong>
         </a>
         <div className="hidden items-center gap-5 text-sm text-[var(--muted-text)] lg:flex">
