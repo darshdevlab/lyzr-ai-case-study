@@ -46,6 +46,13 @@ jobs:
         with:
           enablement: true
 
+      - name: Prepare Pages artifact
+        run: |
+          if [ -d dist/client/lyzr-ai-case-study/_next ]; then
+            cp -R dist/client/lyzr-ai-case-study/_next dist/client/_next
+          fi
+          touch dist/client/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
