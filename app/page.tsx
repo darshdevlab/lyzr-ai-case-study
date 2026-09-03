@@ -842,7 +842,6 @@ export default function Home() {
             }}
           >
             <source src="/lyzr-mvp-tour.mp4" type="video/mp4" />
-            <source src="/lyzr-mvp-tour.mov" type="video/quicktime" />
           </video>
         </div>
         <div className="mvp-workflow-subheading">
